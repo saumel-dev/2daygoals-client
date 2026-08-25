@@ -1,15 +1,38 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/Components/Navbar";
+import localFont from 'next/font/local';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const lufga = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Lufga-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Lufga-Bold.otf",
+      weight: "700",
+      style: "normal",
+    }
+  ],
+  variable: "--font-lufga",
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const helveticaNow = localFont({
+  src: [
+    {
+      path: "../../public/fonts/HelveticaNowDisplay-Bold.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/HelveticaNowDisplay-Regular.woff2",
+      weight: "700",
+      style: "normal",
+    }
+  ],
+  variable: "--font-helvetica-now",
+})
 
 export const metadata = {
   title: "Create Next App",
@@ -20,9 +43,14 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${lufga.variable} ${helveticaNow.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col font-sans antialiased">
+        <Navbar></Navbar>
+        <main>
+        {children}
+        </main>
+        </body>
     </html>
   );
 }
