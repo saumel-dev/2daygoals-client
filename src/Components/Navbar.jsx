@@ -19,10 +19,9 @@ const Navbar = () => {
     // shared link classes: gray underline on hover; active route keeps
     // the underline permanently and switches text color to #163300
     const linkClasses = (href) =>
-        `no-underline pb-1 transition-colors duration-200 underline-offset-4 ${
-            isActive(href)
-                ? 'text-[#163300] underline decoration-gray-400'
-                : 'hover:underline hover:decoration-gray-400 hover:no-underline'
+        `no-underline pb-1 transition-colors duration-200 underline-offset-4 ${isActive(href)
+            ? 'text-[#163300] underline decoration-gray-400'
+            : 'hover:underline hover:decoration-gray-400 hover:no-underline'
         }`;
 
     return (
