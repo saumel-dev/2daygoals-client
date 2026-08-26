@@ -4,6 +4,8 @@ import { Check } from "@gravity-ui/icons";
 import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { FcGoogle } from "react-icons/fc";
+
 const noop = () => { };
 
 const LoginPage = () => {
@@ -31,10 +33,16 @@ const LoginPage = () => {
             alert(error.message);
         }
     }
+    const handleGoogleLogin = async () => {
+        await authClient.signIn.social({
+            provider: "google",
+            callbackUrl: "/",
+        });
+    };
 
     return (
         <div className="min-h-screen flex justify-center items-center">
-            <div className="flex flex-col justify-center items-center max-w-full rounded-xl p-7 border-none bg-white space-y-10">
+            <div className="flex flex-col justify-center items-center max-w-full rounded-xl p-10 border-none bg-white space-y-3">
                 <div className="space-y-2 flex flex-col text-center">
                     <div>
                         <h1 className="text-[#262626] font-semibold text-3xl">Welcome Back</h1>
@@ -44,7 +52,7 @@ const LoginPage = () => {
                         <p>Login your account below</p>
                     </div>
                 </div>
-                <Form className="flex w-80 flex-col gap-4" onSubmit={onSubmit}>
+                <Form className="flex w-80 flex-col gap-3" onSubmit={onSubmit}>
                     <TextField
                         isRequired
                         name="email"
@@ -57,7 +65,7 @@ const LoginPage = () => {
                         }}
                     >
                         <Label>Email</Label>
-                        <Input className="bg-[#EBEBEB]/40" placeholder="john@example.com"/>
+                        <Input className="bg-[#EBEBEB]/40" placeholder="john@example.com" />
                         <FieldError />
                     </TextField>
                     <TextField
@@ -89,7 +97,14 @@ const LoginPage = () => {
                             Login
                         </Button>
                     </div>
-                    <p className="text-sm text-center">Dont have an account? <Link href="/register" className="text-blue-500">Sign up</Link></p>
+                    <p className="text-center text-sm">or</p>
+                    <div className="flex gap-2 justify-center">
+                        <Button onClick={handleGoogleLogin} className="w-70 bg-[#F1FFE8] text-black">
+                            <FcGoogle></FcGoogle>
+                            Continue with Gmail
+                        </Button>
+                    </div>
+                    <p className="text-sm text-center">Dont have an account? <Link href="/register" className="text-[#328100]">Sign up</Link></p>
                 </Form>
             </div>
         </div>
