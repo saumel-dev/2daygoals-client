@@ -87,7 +87,7 @@ const LoginPage = () => {
                         <div className="relative flex items-center w-full">
                             <HiOutlineMail className="absolute left-3 text-xl text-gray-500 z-10 pointer-events-none" />
                             <Input
-                                className="bg-[#EBEBEB]/40 pl-10 pr-3 w-full"
+                                className="bg-white pl-10 pr-3 w-full py-3"
                                 placeholder="john@example.com"
                             />
                         </div>
@@ -116,7 +116,7 @@ const LoginPage = () => {
                         <div className="relative flex items-center w-full">
                             <FaKey className="absolute left-3 text-lg text-gray-500 z-10 pointer-events-none" />
                             <Input
-                                className="bg-[#EBEBEB]/40 pl-10 pr-10 w-full"
+                                className="bg-white pl-10 pr-3 w-full py-3"
                                 placeholder="Enter your password"
                             />
                             <button
@@ -160,7 +160,7 @@ const LoginPage = () => {
                         <FcGoogle className="text-xl" />
                         Continue with Gmail
                     </Button>
-                    <p className="text-[10px] text-center mt-[87px]">By signing in, you agree the <span className="text-[#328100] font-medium cursor-pointer">Terms of Service</span> and <span className="text-[#328100] font-medium cursor-pointer">Privacy Policy</span></p>
+                    <p className="text-[10px] text-center xl:mt-[87px]">By signing in, you agree the <span className="text-[#328100] font-medium cursor-pointer">Terms of Service</span> and <span className="text-[#328100] font-medium cursor-pointer">Privacy Policy</span></p>
                 </Form>
             </div>
         </motion.div>
