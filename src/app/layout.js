@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "@/Components/Navbar";
 import localFont from 'next/font/local';
+import { Toast } from '@heroui/react';
 
 const lufga = localFont({
   src: [
@@ -48,9 +49,10 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col font-sans antialiased">
         <Navbar></Navbar>
         <main>
-        {children}
+          <Toast.Provider placement="top"></Toast.Provider>
+          {children}
         </main>
-        </body>
+      </body>
     </html>
   );
 }

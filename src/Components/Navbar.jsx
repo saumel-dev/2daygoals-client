@@ -87,13 +87,13 @@ const Navbar = () => {
                     {/* Login/Register: visible on every screen size, always outside the burger menu */}
                     <ul className="flex items-center gap-2 md:gap-4">
                         <li>
-                            <Link href="/#" className="bg-white px-4 py-2 rounded-md hover:no-underline no-underline">
+                            <Link href="/login" className="bg-white px-4 py-2 rounded-md hover:no-underline no-underline">
                                 Login
                             </Link>
                         </li>
                         <li>
-                            <Link href="/#" className="text-white bg-black px-4 py-2 rounded-md hover:no-underline no-underline">
-                                Register - its free
+                            <Link href="/register" className="text-white bg-black px-4 py-2 rounded-md hover:no-underline no-underline">
+                                Register
                             </Link>
                         </li>
                     </ul>
