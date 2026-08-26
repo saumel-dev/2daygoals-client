@@ -10,6 +10,7 @@ import { motion } from "motion/react";
 import { HiOutlineMail } from "react-icons/hi";
 import { LuEye, LuEyeClosed } from "react-icons/lu";
 import { FaKey } from "react-icons/fa";
+import Image from "next/image";
 
 const noop = () => { };
 
@@ -66,6 +67,13 @@ const LoginPage = () => {
 
             <div className="flex flex-col justify-center items-center w-full max-w-md rounded-2xl p-8 bg-white shadow-lg space-y-4">
                 <div className="space-y-1 flex flex-col text-center">
+                    <Image
+                        src="/assets/login_logo.svg"
+                        alt="Logo"
+                        width={48}
+                        height={48}
+                        className="mx-auto mb-2"
+                    />
                     <h1 className="text-[#262626] font-semibold text-3xl">Welcome Back</h1>
                     <p className="text-gray-600 text-sm">Its great to see you</p>
                     <p className="text-gray-600 text-sm">Login your account below</p>
