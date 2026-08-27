@@ -6,7 +6,7 @@ import React from 'react';
 import { usePathname, useRouter } from "next/navigation";
 import { authClient } from '@/lib/auth-client';
 
-const Navbar = () => {
+const Navbar = ({ initialUser }) => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const NavLinks = [
         { name: 'Home', href: '/' },
@@ -18,7 +18,9 @@ const Navbar = () => {
     const router = useRouter();
 
     const { data: session, isPending } = authClient.useSession();
-    const user = session?.user;
+    // While the client hook is still resolving, trust the server-known value.
+    // Once it resolves, trust the live client value (handles login/logout without reload).
+    const user = isPending ? initialUser : session?.user;
 
     const getInitials = (name) => {
         if (!name) return "U";
@@ -47,7 +49,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <nav className="sticky top-0 z-40 w-full border-separator backdrop-blur-lg px-0 md:px-20">
+            <nav className="sticky top-0 z-40 w-full border-separator px-0 md:px-20">
                 <header className="flex h-16 items-center justify-between px-6">
                     <div className="flex items-center gap-4">
                         <button
@@ -107,7 +109,7 @@ const Navbar = () => {
 
                     {/* Auth area: Login/Register when logged out, Avatar dropdown (+ logout button on desktop) when logged in */}
                     <ul className="flex items-center gap-2 md:gap-4">
-                        {isPending ? null : user ? (
+                        {user ? (
                             <>
                                 <li>
                                     <Dropdown className=''>
