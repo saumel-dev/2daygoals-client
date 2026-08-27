@@ -61,7 +61,7 @@ const TermsOfServicePage = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                 </svg>
                             </span>
-                            <span className="font-medium text-sm">Register - it's Free</span>
+                            <span className="font-medium text-sm">Register - its Free</span>
                         </Button>
                     </motion.div>
                 </div>
@@ -115,14 +115,14 @@ const TermsOfServicePage = () => {
                         </p>
                         <div className="space-y-2 pt-2 text-sm text-gray-700">
                             <p><strong className="text-black">Account info</strong></p>
-                            <p> your name, email, and password (encrypted — even we can't see it).</p>
+                            <p> your name, email, and password (encrypted — even we cant see it).</p>
                             <p><strong className="text-black">App activity</strong></p>
                             <p>tasks you create, features you use, and bugs we need to fix.</p>
                             <p><strong className="text-black">Device info</strong></p>
                             <p> browser type, OS, IP — specs to keep everything smooth and fast.</p>
                         </div>
                         <p className="text-xs text-gray-500 pt-1">
-                            That's it, No unnecessary tracking, no creepy stuff.
+                            Thats it, No unnecessary tracking, no creepy stuff.
                         </p>
                     </motion.div>
 
@@ -168,7 +168,7 @@ const TermsOfServicePage = () => {
                             <li>Delete your account and remove everything permanently</li>
                         </ul>
                         <p className="text-sm text-gray-600 pt-1">
-                            And send us an email at <span className="underline cursor-pointer">[your email]</span>, and we'll handle it quickly.
+                            And send us an email at <span className="underline cursor-pointer">[your email]</span>, and well handle it quickly.
                         </p>
                     </motion.div>
 
@@ -184,7 +184,7 @@ const TermsOfServicePage = () => {
                             How We Keep It Safe
                         </h2>
                         <p className="font-semibold text-gray-900">We take security seriously (really seriously).</p>
-                        <p className="text-sm font-semibold text-gray-800">You: Here's what we do:</p>
+                        <p className="text-sm font-semibold text-gray-800">You: Heres what we do:</p>
                         <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                             <li>Encrypted databases</li>
                             <li>Secure HTTPS connections</li>
@@ -246,7 +246,7 @@ const TermsOfServicePage = () => {
                         </h2>
                         <p className="text-sm leading-relaxed text-gray-700">
                             We might tweak this page as we grow.<br />
-                            If we make major updates, we'll let you know right inside the app or by email — no surprises.
+                            If we make major updates, well let you know right inside the app or by email — no surprises.
                         </p>
                     </motion.div>
 
@@ -263,7 +263,7 @@ const TermsOfServicePage = () => {
                         </h2>
                         <p className="text-sm leading-relaxed text-gray-700">
                             Have questions? Found something unclear?<br />
-                            Reach out — we're real humans behind this product.
+                            Reach out — were real humans behind this product.
                         </p>
                     </motion.div>
 
@@ -282,7 +282,7 @@ const TermsOfServicePage = () => {
                         <p className="text-sm leading-relaxed text-gray-700">
                             We built 2daygoals to help people get things done — not to harvest or sell data.
                         </p>
-                        <p className="font-semibold text-black">That's our promise.</p>
+                        <p className="font-semibold text-black">Thats our promise.</p>
                     </motion.div>
                 </div>
             </main>
