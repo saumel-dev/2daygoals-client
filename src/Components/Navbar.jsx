@@ -1,8 +1,10 @@
 'use client'
-import { Button, Link } from '@heroui/react';
+import { Button, Link, Dropdown, Avatar, Label } from '@heroui/react';
+import { ArrowRightFromSquare } from '@gravity-ui/icons';
 import Image from 'next/image';
 import React from 'react';
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { authClient } from '@/lib/auth-client';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -13,6 +15,25 @@ const Navbar = () => {
         { name: 'Resource', href: '/resource' },
     ]
     const pathName = usePathname();
+    const router = useRouter();
+
+    const { data: session, isPending } = authClient.useSession();
+    const user = session?.user;
+
+    const getInitials = (name) => {
+        if (!name) return "U";
+        return name
+            .split(" ")
+            .map((part) => part[0])
+            .join("")
+            .slice(0, 2)
+            .toUpperCase();
+    };
+
+    const handleLogout = async () => {
+        await authClient.signOut();
+        router.push("/login");
+    };
 
     const isActive = (href) => pathName === href;
 
@@ -84,18 +105,77 @@ const Navbar = () => {
                         }
                     </ul>
 
-                    {/* Login/Register: visible on every screen size, always outside the burger menu */}
+                    {/* Auth area: Login/Register when logged out, Avatar dropdown (+ logout button on desktop) when logged in */}
                     <ul className="flex items-center gap-2 md:gap-4">
-                        <li>
-                            <Link href="/login" className="bg-white px-4 py-2 rounded-md hover:no-underline no-underline">
-                                Login
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/register" className="text-white bg-black px-4 py-2 rounded-md hover:no-underline no-underline">
-                                Register
-                            </Link>
-                        </li>
+                        {isPending ? null : user ? (
+                            <>
+                                <li>
+                                    <Dropdown className=''>
+                                        <Dropdown.Trigger className="rounded-full">
+                                            <Avatar className='mt-2'>
+                                                <Avatar.Image alt={user.name} src={user.image} />
+                                                <Avatar.Fallback delayMs={600}>
+                                                    {getInitials(user.name)}
+                                                </Avatar.Fallback>
+                                            </Avatar>
+                                        </Dropdown.Trigger>
+                                        <Dropdown.Popover>
+                                            <div className="px-3 pt-3 pb-1">
+                                                <div className="flex items-center gap-2">
+                                                    <Avatar size="sm">
+                                                        <Avatar.Image alt={user.name} src={user.image} />
+                                                        <Avatar.Fallback delayMs={600}>
+                                                            {getInitials(user.name)}
+                                                        </Avatar.Fallback>
+                                                    </Avatar>
+                                                    <div className="flex flex-col gap-0">
+                                                        <p className="text-sm leading-5 font-medium">{user.name}</p>
+                                                        <p className="text-xs leading-none text-muted">{user.email}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <Dropdown.Menu>
+                                                {/* Logout lives inside the dropdown only on small screens; desktop uses the standalone button below */}
+                                                <Dropdown.Item
+                                                    id="logout"
+                                                    textValue="Logout"
+                                                    variant="danger"
+                                                    className="md:hidden"
+                                                    onAction={handleLogout}
+                                                >
+                                                    <div className="flex w-full items-center justify-between gap-2">
+                                                        <Label>Log Out</Label>
+                                                        <ArrowRightFromSquare className="size-3.5 text-danger" />
+                                                    </div>
+                                                </Dropdown.Item>
+                                            </Dropdown.Menu>
+                                        </Dropdown.Popover>
+                                    </Dropdown>
+                                </li>
+                                <li className="hidden md:block">
+                                    <Button
+                                        onPress={handleLogout}
+                                        className="flex items-center gap-2 bg-red-500 text-white px-2 rounded-md"
+                                    >
+                                        <ArrowRightFromSquare className="size-4" />
+                                        Logout
+                                    </Button>
+                                </li>
+                            </>
+                        ) : (
+                            <>
+                                <li>
+                                    <Link href="/login" className="bg-white px-4 py-2 rounded-md hover:no-underline no-underline">
+                                        Login
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/register" className="text-white bg-black px-4 py-2 rounded-md hover:no-underline no-underline">
+                                        Register
+                                    </Link>
+                                </li>
+                            </>
+                        )}
                     </ul>
                 </header>
 
