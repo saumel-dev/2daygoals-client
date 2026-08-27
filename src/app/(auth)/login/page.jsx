@@ -167,7 +167,7 @@ const LoginPage = () => {
                         <FcGoogle className="text-xl" />
                         Continue with Gmail
                     </Button>
-                    <p className="text-[10px] text-center xl:mt-21.75">By signing in, you agree the <span className="text-[#328100] font-medium cursor-pointer"><Link href="/terms-of-service">Terms of Service</Link></span> and <span className="text-[#328100] font-medium cursor-pointer"><Link href="/privacy-policy">Privacy Policy</Link></span></p>
+                    <p className="text-[10px] text-center xl:mt-21.75">By signing in, you agree the <span className="text-[#328100] font-medium cursor-pointer"><Link href="/terms-of-service">Terms of Service</Link></span> and <span className="text-[#328100] font-medium cursor-pointer"><Link href="/terms-of-service">Privacy Policy</Link></span></p>
                 </Form>
             </div>
         </motion.div>

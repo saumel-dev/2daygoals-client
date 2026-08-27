@@ -16,6 +16,7 @@ const noop = () => { };
 const RegisterPage = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [avatarPreview, setAvatarPreview] = useState(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const toggleVisibility = () => setIsVisible(!isVisible);
 
@@ -26,30 +27,72 @@ const RegisterPage = () => {
         }
     };
 
-    const onSubmit = async (e) => {
-        e.preventDefault();
-        const formData = new FormData(e.currentTarget);
-        const user = Object.fromEntries(formData.entries());
-        const { data, error } = await authClient.signUp.email({
-            name: user.name,
-            email: user.email,
-            password: user.password,
-            image: user.image instanceof File && user.image.size > 0 ? user.image : undefined,
+    // Uploads the selected file to our own API route, which forwards it to
+    // Cloudinary using the server-side secret. Returns the hosted image URL.
+    const uploadImageToCloudinary = async (file) => {
+        const formData = new FormData();
+        formData.append("file", file);
+
+        const res = await fetch("/api/upload", {
+            method: "POST",
+            body: formData,
         });
-        if (data) {
-            toast.success("Account Created", {
-                actionProps: {
-                    children: "",
-                    className: "bg-success text-success-foreground",
-                    onPress: noop,
-                },
-                description: "",
-            });
-            redirect('/');
+
+        const data = await res.json();
+
+        if (!res.ok) {
+            throw new Error(data.error || "Image upload failed");
         }
 
-        if (error) {
-            toast.danger(error.message, {
+        return data.url;
+    };
+
+    const onSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        try {
+            const formData = new FormData(e.currentTarget);
+            const user = Object.fromEntries(formData.entries());
+
+            let imageUrl = undefined;
+            const imageFile = formData.get("image");
+
+            if (imageFile instanceof File && imageFile.size > 0) {
+                imageUrl = await uploadImageToCloudinary(imageFile);
+            }
+
+            const { data, error } = await authClient.signUp.email({
+                name: user.name,
+                email: user.email,
+                password: user.password,
+                image: imageUrl,
+            });
+
+            if (data) {
+                toast.success("Account Created", {
+                    actionProps: {
+                        children: "",
+                        className: "bg-success text-success-foreground",
+                        onPress: noop,
+                    },
+                    description: "",
+                });
+                redirect('/');
+            }
+
+            if (error) {
+                toast.danger(error.message, {
+                    actionProps: {
+                        children: "",
+                        className: "bg-error text-error-foreground",
+                        onPress: noop,
+                    },
+                    description: "",
+                });
+            }
+        } catch (err) {
+            toast.danger(err.message || "Something went wrong", {
                 actionProps: {
                     children: "",
                     className: "bg-error text-error-foreground",
@@ -57,6 +100,8 @@ const RegisterPage = () => {
                 },
                 description: "",
             });
+        } finally {
+            setIsSubmitting(false);
         }
     };
 
@@ -203,8 +248,12 @@ const RegisterPage = () => {
                         <FieldError />
                     </TextField>
 
-                    <Button type="submit" className="w-full bg-black text-white py-4 rounded-lg flex items-center justify-center gap-2 mt-2">
-                        Continue with Email
+                    <Button
+                        type="submit"
+                        isDisabled={isSubmitting}
+                        className="w-full bg-black text-white py-4 rounded-lg flex items-center justify-center gap-2 mt-2 disabled:opacity-60"
+                    >
+                        {isSubmitting ? "Creating Account..." : "Continue with Email"}
                     </Button>
 
                     <div className="flex flex-col gap-1 items-center text-sm mt-0.75">
@@ -224,7 +273,7 @@ const RegisterPage = () => {
                         <FcGoogle className="text-xl" />
                         Continue with Gmail
                     </Button>
-                    <p className="text-[10px] text-center xl:mt-21.75">By signing up, you agree the <span className="text-[#328100] font-medium cursor-pointer"><Link href="/terms-of-service">Terms of Service</Link></span> and <span className="text-[#328100] font-medium cursor-pointer"><Link href="/privacy-policy">Privacy Policy</Link></span></p>
+                    <p className="text-[10px] text-center xl:mt-21.75">By signing up, you agree the <span className="text-[#328100] font-medium cursor-pointer"><Link href="/terms-of-service">Terms of Service</Link></span> and <span className="text-[#328100] font-medium cursor-pointer"><Link href="/terms-of-service">Privacy Policy</Link></span></p>
                 </Form>
             </div>
         </motion.div>
