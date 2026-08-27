@@ -3,7 +3,7 @@ import { useState } from "react";
 import { authClient } from "@/lib/auth-client";
 import { Button, Description, FieldError, Form, Input, Label, TextField, toast } from "@heroui/react";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation"
 import { FcGoogle } from "react-icons/fc";
 import { motion } from "motion/react";
 import { HiOutlineMail, HiOutlineUser } from "react-icons/hi";
@@ -17,7 +17,7 @@ const RegisterPage = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [avatarPreview, setAvatarPreview] = useState(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
-
+    const router = useRouter();
     const toggleVisibility = () => setIsVisible(!isVisible);
 
     const handleAvatarChange = (e) => {
@@ -78,7 +78,7 @@ const RegisterPage = () => {
                     },
                     description: "",
                 });
-                redirect('/');
+                router.push('/')
             }
 
             if (error) {

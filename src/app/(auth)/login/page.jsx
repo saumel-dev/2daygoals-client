@@ -3,7 +3,7 @@ import { useState } from "react";
 import { authClient } from "@/lib/auth-client";
 import { Button, Description, FieldError, Form, Input, Label, TextField, toast } from "@heroui/react";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation"
 import { FcGoogle } from "react-icons/fc";
 import { motion } from "motion/react";
 import { HiOutlineMail } from "react-icons/hi";
@@ -17,7 +17,7 @@ const LoginPage = () => {
     const [isVisible, setIsVisible] = useState(false);
 
     const toggleVisibility = () => setIsVisible(!isVisible);
-
+    const router = useRouter();
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -35,7 +35,7 @@ const LoginPage = () => {
                 },
                 description: "",
             });
-            redirect('/');
+            router.push('/')
         }
 
         if (error) {
