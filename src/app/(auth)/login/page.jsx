@@ -1,11 +1,10 @@
 "use client";
 import { useState } from "react";
 import { authClient } from "@/lib/auth-client";
-import { Check } from "@gravity-ui/icons";
 import { Button, Description, FieldError, Form, Input, Label, TextField, toast } from "@heroui/react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { FcGoogle } from "react-icons/fc"; // standard react-icons/fc
+import { FcGoogle } from "react-icons/fc";
 import { motion } from "motion/react";
 import { HiOutlineMail } from "react-icons/hi";
 import { LuEye, LuEyeClosed } from "react-icons/lu";
@@ -148,7 +147,7 @@ const LoginPage = () => {
                         Continue with Email
                     </Button>
 
-                    <div className="flex flex-col gap-1 items-center text-sm mt-[3px]">
+                    <div className="flex flex-col gap-1 items-center text-sm mt-0.75">
                         <p>
                             Dont have an account?{" "}
                             <Link href="/register" className="text-[#328100] font-medium">
@@ -168,7 +167,7 @@ const LoginPage = () => {
                         <FcGoogle className="text-xl" />
                         Continue with Gmail
                     </Button>
-                    <p className="text-[10px] text-center xl:mt-[87px]">By signing in, you agree the <span className="text-[#328100] font-medium cursor-pointer">Terms of Service</span> and <span className="text-[#328100] font-medium cursor-pointer">Privacy Policy</span></p>
+                    <p className="text-[10px] text-center xl:mt-21.75">By signing in, you agree the <span className="text-[#328100] font-medium cursor-pointer"><Link href="/terms-of-service">Terms of Service</Link></span> and <span className="text-[#328100] font-medium cursor-pointer"><Link href="/privacy-policy">Privacy Policy</Link></span></p>
                 </Form>
             </div>
         </motion.div>

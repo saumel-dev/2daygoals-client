@@ -12,5 +12,7 @@
 /* app/globals.css */
 body {
   background: linear-gradient(180deg, #D7F2FF 0%, rgba(215, 242, 255, 0) 500px), #EFF2F7;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   min-height: 100vh;
 }
