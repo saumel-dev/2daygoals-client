@@ -48,14 +48,18 @@ export default async function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${lufga.variable} ${helveticaNow.variable} h-full antialiased`}
+      className={`${lufga.variable} ${helveticaNow.variable} h-full antialiased overflow-x-hidden`}
     >
-      <body className="relative min-h-full flex flex-col font-sans antialiased overflow-x-hidden">
-        <img
-          src="/assets/hero.svg"
-          alt=""
-          className="pointer-events-none absolute -right-[7%] -top-2 z-0 w-[420px] max-w-none select-none sm:w-[520px] lg:w-[1000px]"
-        />
+      <body className="relative min-h-full flex flex-col font-sans antialiased overflow-x-hidden w-full">
+        {/* Background Decorative Container */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
+          <img
+            src="/assets/hero.svg"
+            alt=""
+            className="absolute -right-[7%] -top-2 w-[420px] max-w-none select-none sm:w-[520px] lg:w-[1000px]"
+          />
+        </div>
+
         <Navbar initialUser={session?.user ?? null}></Navbar>
         <main className="relative z-10 flex-1">
           <Toast.Provider placement="top"></Toast.Provider>
