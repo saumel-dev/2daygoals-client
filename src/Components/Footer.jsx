@@ -140,7 +140,7 @@ const Footer = () => {
                 <p
                     className="translate-y-1/4 text-center font-black leading-none tracking-tight"
                     style={{
-                        fontSize: "clamp(6rem, 18vw, 14rem)",
+                        fontSize: "clamp(5rem, 18vw, 14rem)",
                         backgroundImage: "linear-gradient(180deg, #262626 0%, #0C0D11 100%)",
                         WebkitBackgroundClip: "text",
                         backgroundClip: "text",
