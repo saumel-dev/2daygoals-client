@@ -38,10 +38,10 @@ const Features = () => {
                     viewport={{ once: true, amount: 0.3 }}
                     whileHover={{ y: -8, scale: 1.015 }}
                     transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                    className="bg-gradient-to-b from-[#DEE9EE] to-[#F2F6F8]/1 rounded-2xl p-2 sm:p-4 flex flex-col justify-between cursor-pointer hover:shadow-xl"
+                    className="bg-linear-to-b from-[#DEE9EE] to-[#F2F6F8]/1 rounded-2xl p-2 sm:p-4 flex flex-col justify-between cursor-pointer hover:shadow-xl"
                 >
                     <div className="relative w-full flex justify-center pt-2 pb-6">
-                        <div className="relative w-[90%] mt-6 max-w-[560px]">
+                        <div className="relative w-[90%] mt-6 max-w-140">
                             <Image
                                 src="/assets/fe1.svg"
                                 width={500}
@@ -77,10 +77,10 @@ const Features = () => {
                     viewport={{ once: true, amount: 0.3 }}
                     whileHover={{ y: -8, scale: 1.015 }}
                     transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                    className="bg-gradient-to-b from-[#DEE9EE] to-[#F2F6F8]/1 rounded-2xl p-2 sm:p-4 flex flex-col justify-between cursor-pointer hover:shadow-xl"
+                    className="bg-linear-to-b from-[#DEE9EE] to-[#F2F6F8]/1 rounded-2xl p-2 sm:p-4 flex flex-col justify-between cursor-pointer hover:shadow-xl"
                 >
                     <div className="relative w-full flex justify-center pt-2 pb-6">
-                        <div className="relative w-[90%] mt-6 max-w-[560px]">
+                        <div className="relative w-[90%] mt-6 max-w-140">
                             <Image
                                 src="/assets/fe3.svg"
                                 width={500}
@@ -116,10 +116,10 @@ const Features = () => {
                     viewport={{ once: true, amount: 0.3 }}
                     whileHover={{ y: -8, scale: 1.015 }}
                     transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                    className="bg-gradient-to-b from-[#DEE9EE] to-[#F2F6F8]/1 rounded-2xl p-2 sm:p-4 flex flex-col justify-between cursor-pointer hover:shadow-xl"
+                    className="bg-linear-to-b from-[#DEE9EE] to-[#F2F6F8]/1 rounded-2xl p-2 sm:p-4 flex flex-col justify-between cursor-pointer hover:shadow-xl"
                 >
                     <div className="relative w-full flex justify-center pt-2 pb-6">
-                        <div className="relative w-[90%] mt-6 max-w-[560px]">
+                        <div className="relative w-[90%] mt-6 max-w-140">
                             <Image
                                 src="/assets/fe5-fixed.svg"
                                 width={469}
@@ -155,10 +155,10 @@ const Features = () => {
                     viewport={{ once: true, amount: 0.3 }}
                     whileHover={{ y: -8, scale: 1.015 }}
                     transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                    className="bg-gradient-to-b from-[#DEE9EE] to-[#F2F6F8]/1 rounded-2xl p-2 sm:p-4 flex flex-col justify-between cursor-pointer hover:shadow-xl"
+                    className="bg-linear-to-b from-[#DEE9EE] to-[#F2F6F8]/1 rounded-2xl p-2 sm:p-4 flex flex-col justify-between cursor-pointer hover:shadow-xl"
                 >
                     <div className="relative w-full flex justify-center pt-2 pb-6">
-                        <div className="relative w-[90%] mt-6 max-w-[560px]">
+                        <div className="relative w-[90%] mt-6 max-w-140">
                             <Image
                                 src="/assets/fe7-fixed.svg"
                                 width={424}
