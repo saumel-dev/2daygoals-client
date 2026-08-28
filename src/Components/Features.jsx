@@ -49,7 +49,7 @@ const Features = () => {
                                 alt="Share your Problem"
                                 className="w-full h-auto object-contain rounded-xl drop-shadow-sm"
                             />
-                            <div className="absolute -top-6 -right-6 sm:-top-10 sm:-right-10 md:-top-15 md:-right-12 w-[55%] sm:w-[60%]">
+                            <div className="absolute -top-10 -right-10 sm:-top-10 sm:-right-10 md:-top-15 md:-right-12 w-[55%] sm:w-[60%]">
                                 <Image
                                     src="/assets/fe2.svg"
                                     width={200}
@@ -88,7 +88,7 @@ const Features = () => {
                                 alt="Manage Your Task"
                                 className="w-full h-auto object-contain rounded-xl drop-shadow-sm"
                             />
-                            <div className="absolute -bottom-10 -right-8 sm:-bottom-16 sm:-right-12 md:-bottom-20 md:-right-15 w-[55%] sm:w-[60%]">
+                            <div className="absolute -bottom-12 -right-11 sm:-bottom-16 sm:-right-12 md:-bottom-20 md:-right-15 w-[55%] sm:w-[60%]">
                                 <Image
                                     src="/assets/fe4.svg"
                                     width={200}
@@ -127,7 +127,7 @@ const Features = () => {
                                 alt="Chats On Friends"
                                 className="w-full h-auto object-contain rounded-xl drop-shadow-sm"
                             />
-                            <div className="absolute -top-6 -right-7 sm:-top-10 sm:-right-11 md:-top-15 md:-right-13 w-[55%] sm:w-[60%]">
+                            <div className="absolute -top-10 -right-10 sm:-top-10 sm:-right-11 md:-top-15 md:-right-13 w-[55%] sm:w-[60%]">
                                 <Image
                                     src="/assets/fe6.svg"
                                     width={200}
@@ -166,7 +166,7 @@ const Features = () => {
                                 alt="Note On Calendar"
                                 className="w-full h-auto object-contain drop-shadow-sm"
                             />
-                            <div className="absolute -top-4 -right-14 sm:-top-7 sm:-right-18 md:-top-10 md:-right-23 w-[55%] sm:w-[60%]">
+                            <div className="absolute -top-7 -right-14 sm:-top-7 sm:-right-18 md:-top-10 md:-right-23 w-[55%] sm:w-[60%]">
                                 <Image
                                     src="/assets/fe8.svg"
                                     width={200}
