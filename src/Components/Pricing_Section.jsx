@@ -8,14 +8,14 @@ const Pricing_Section = () => {
                     <h2 className='text-white font-helvetica text-3xl md:w-150'>Check Out Our Pricing Plans for Both Monthly and Yearly Subscriptions</h2>
                     <p className='mt-2.5 md:w-165 text-[#B7B7B7]'>We understand that as your business grows, your needs evolve. Thats why our flexible plans are designed to adapt and scale seamlessly alongside your business</p>
                 </div>
-                <div className='grid grid-cols-1 md:grid-cols-3 justify-items-center'>
-                    <div className="relative rounded-2xl p-6 bg-[url('/assets/pricing_bg.png')] bg-cover overflow-hidden mt-25 w-96">
+                <div className='flex justify-center items-center gap-10 flex-wrap md:mt-25 pb-25'>
+                    <div className="relative rounded-2xl p-6 bg-[url('/assets/pricing_bg.png')] bg-cover overflow-hidden mt-25 w-96 h-180">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi odit dignissimos, officiis facere amet ipsa asperiores provident, assumenda fuga suscipit voluptatem quod adipisci dolore.</p>
                     </div>
-                    <div className="relative rounded-2xl p-6 bg-[url('/assets/pricing_bg.png')] bg-cover overflow-hidden mt-25 w-96">
+                    <div className="relative rounded-2xl p-6 bg-[url('/assets/pricing_bg.png')] bg-cover overflow-hidden mt-25 w-96 h-180">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi odit dignissimos, officiis facere amet ipsa asperiores provident, assumenda fuga suscipit voluptatem quod adipisci dolore.</p>
                     </div>
-                    <div className="relative rounded-2xl p-6 bg-[url('/assets/pricing_bg.png')] bg-cover overflow-hidden mt-25 w-96">
+                    <div className="relative rounded-2xl p-6 bg-[url('/assets/pricing_bg.png')] bg-cover overflow-hidden mt-25 w-96 h-180">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi odit dignissimos, officiis facere amet ipsa asperiores provident, assumenda fuga suscipit voluptatem quod adipisci dolore.</p>
                     </div>
                 </div>
