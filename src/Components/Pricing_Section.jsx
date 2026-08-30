@@ -1,10 +1,9 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
-// One object per card. If a value differs between cards (icon, price, features,
-// button labels/colors), it lives here. If it's identical across all three
-// (fonts, sizes, layout), it lives in the JSX below instead — that split is
-// what keeps the markup from being copy-pasted three times.
 const plans = [
     {
         id: 'free',
@@ -22,7 +21,7 @@ const plans = [
         id: 'monthly',
         icon: '/assets/icons/arrow.svg',
         title: 'Monthly',
-        highlighted: true, // taller than the other two, but only from md: up
+        highlighted: true,
         subtitle: 'No minimum commitment pause or cancel anytime',
         price: '19$',
         period: '/month',
@@ -46,16 +45,55 @@ const plans = [
     },
 ];
 
-// The two dark-UI button looks from the Figma file, both built the same way:
-// an outer box IS the gradient (that's its entire background), and an inner
-// box sized 1px smaller on every side sits on top with the real fill color —
-// so only a 1px sliver of the gradient shows through as a "border". A plain
-// CSS border-color can never be a gradient, so this two-layer stack is the
-// standard workaround. 'accent' (Yearly) skips this — it's a flat fill, no
-// gradient ring was specified for it.
 const buttonFillClass = {
     primary: 'bg-[#18191E]',
     glass: 'bg-transparent',
+};
+
+// Motion Variants mapping directly to image instructions
+const headingVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+        opacity: 1, 
+        y: 0, 
+        transition: { duration: 0.6, ease: 'easeOut' } 
+    },
+};
+
+const cardsContainerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.2, // Staggered fade/slide-in on scroll
+        },
+    },
+};
+
+const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { 
+        opacity: 1, 
+        y: 0, 
+        transition: { duration: 0.5, ease: 'easeOut' } 
+    },
+};
+
+const listContainerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.1, // Lines tick in one at a time
+        },
+    },
+};
+
+const listItemVariants = {
+    hidden: { opacity: 0, x: -10 },
+    visible: { 
+        opacity: 1, 
+        x: 0, 
+        transition: { duration: 0.3, ease: 'easeOut' } 
+    },
 };
 
 const Pricing_Section = () => {
@@ -63,25 +101,47 @@ const Pricing_Section = () => {
         <section>
             <div className="relative bg-[url('/assets/pricing_section_bg_png.png')] bg-cover bg-no-repeat bg-center overflow-hidden">
 
-                {/* Section heading */}
-                <div className="mt-24 mx-5 md:mx-24">
+                {/* Heading + subtitle: Fade up as you scroll to them */}
+                <motion.div 
+                    className="mt-24 mx-5 md:mx-24"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: '-50px' }}
+                    variants={headingVariants}
+                >
                     <h2 className="text-white font-helvetica text-3xl md:w-[37.5rem]">
                         Check Out Our Pricing Plans for Both Monthly and Yearly Subscriptions
                     </h2>
                     <p className="mt-2.5 md:w-[41.25rem] font-helvetica text-[10px] text-[#B7B7B7]">
                         We understand that as your business grows, your needs evolve. Thats why our flexible plans are designed to adapt and scale seamlessly alongside your business
                     </p>
-                </div>
+                </motion.div>
 
-                {/* Cards */}
-                <div className="flex justify-center items-end gap-10 flex-wrap mt-24 pb-24">
+                {/* Cards Container */}
+                <motion.div 
+                    className="flex justify-center items-end gap-10 flex-wrap mt-24 pb-24"
+                    variants={cardsContainerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: '-50px' }}
+                >
                     {plans.map((plan) => (
-                        <div
+                        <motion.div
                             key={plan.id}
+                            variants={cardVariants}
+                            // Card on hover: Lifts up 8px
+                            whileHover={{ y: -8 }}
+                            transition={{ duration: 0.25, ease: 'easeOut' }}
                             className={`relative rounded-2xl bg-[url('/assets/pricing_bg.png')] bg-cover bg-center bg-no-repeat overflow-hidden w-96 p-8 ${plan.highlighted ? 'md:pt-16' : ''}`}
                         >
-                            {/* icon */}
-                            <Image src={plan.icon} alt={plan.title} width={40} height={40} />
+                            {/* Card's icon on hover: Small rotate + scale riding along with card hover */}
+                            <motion.div
+                                className="w-10 h-10 inline-block"
+                                whileHover={{ scale: 1.15, rotate: 6 }}
+                                transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+                            >
+                                <Image src={plan.icon} alt={plan.title} width={40} height={40} />
+                            </motion.div>
 
                             {/* title */}
                             <h3 className="mt-6 font-helvetica text-2xl text-white">{plan.title}</h3>
@@ -95,23 +155,27 @@ const Pricing_Section = () => {
                                 <span className="font-helvetica text-[10px] text-[#9FE770]">{plan.period}</span>
                             </div>
 
-                            {/* buttons — same width/height on every card; only the fill style changes */}
+                            {/* Buttons: Press down slightly on click, grow slightly on hover */}
                             <div className="mt-5 flex flex-col gap-2.5">
                                 {plan.buttons.map((btn) =>
                                     btn.variant === 'accent' ? (
-                                        // Flat fill, no gradient ring — Yearly's plain #163300 button
-                                        <button
+                                        <motion.button
                                             key={btn.label}
-                                            className="w-64 h-11 rounded-lg px-4 flex items-center justify-between bg-[#163300] text-white text-sm font-helvetica"
+                                            whileHover={{ scale: 1.02 }}
+                                            whileTap={{ scale: 0.97 }}
+                                            transition={{ duration: 0.15 }}
+                                            className="w-64 h-11 rounded-lg px-4 flex items-center justify-between bg-[#163300] text-white text-sm font-helvetica cursor-pointer"
                                         >
                                             {btn.label}
                                             <Image src="/assets/icons/Arrow_Icon.svg" alt="" width={16} height={16} />
-                                        </button>
+                                        </motion.button>
                                     ) : (
-                                        // Gradient-border wrapper: outer = the gradient, inner = the real fill
-                                        <button
+                                        <motion.button
                                             key={btn.label}
-                                            className="w-64 h-11 rounded-lg p-px bg-gradient-to-b from-[#DEDEDE]/[0.32] to-[#787878]/[0.12]"
+                                            whileHover={{ scale: 1.02 }}
+                                            whileTap={{ scale: 0.97 }}
+                                            transition={{ duration: 0.15 }}
+                                            className="w-64 h-11 rounded-lg p-px bg-gradient-to-b from-[#DEDEDE]/[0.32] to-[#787878]/[0.12] cursor-pointer"
                                         >
                                             <span
                                                 className={`${buttonFillClass[btn.variant]} flex items-center justify-between h-full rounded-[7px] px-4 text-white text-sm font-helvetica`}
@@ -119,26 +183,36 @@ const Pricing_Section = () => {
                                                 {btn.label}
                                                 <Image src="/assets/icons/Arrow_Icon.svg" alt="" width={16} height={16} />
                                             </span>
-                                        </button>
+                                        </motion.button>
                                     )
                                 )}
                             </div>
 
-                            {/* feature list */}
+                            {/* Feature list: Lines tick in one at a time */}
                             <div className="mt-6">
-                                <p className="font-helvetica text-sm font-semibold text-white">What's Include</p>
-                                <ul className="mt-3 flex flex-col gap-2.5">
+                                <p className="font-helvetica text-sm font-semibold text-white">Whats Include</p>
+                                <motion.ul 
+                                    className="mt-3 flex flex-col gap-2.5"
+                                    variants={listContainerVariants}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                >
                                     {plan.features.map((feature) => (
-                                        <li key={feature} className="flex items-center gap-2.5">
+                                        <motion.li 
+                                            key={feature} 
+                                            variants={listItemVariants}
+                                            className="flex items-center gap-2.5"
+                                        >
                                             <Image src="/assets/icons/Verify_Icon.svg" alt="" width={16} height={16} />
                                             <span className="font-helvetica text-sm text-[#B7B7B7]">{feature}</span>
-                                        </li>
+                                        </motion.li>
                                     ))}
-                                </ul>
+                                </motion.ul>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
 
             </div>
         </section>
