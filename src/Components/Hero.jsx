@@ -81,7 +81,7 @@ const Hero = () => {
                 transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
                 className="relative z-10 mx-auto mb-12 mt-10 max-w-5xl sm:mt-16 sm:mb-16"
             >
-                <div className="relative rounded-2xl sm:rounded-3xl bg-linear-to-b from-[#DEE9EE] to-[#F2F6F8] p-3 sm:p-5 md:p-7.5 shadow-[0_45px_60px_-15px_rgba(0,0,0,0.12)] ring-1 ring-white/80 filter drop-shadow-[0_20px_20px_rgba(200,220,230,0.6)]">
+                <div className="relative rounded-2xl sm:rounded-3xl bg-linear-to-b from-[#DEE9EE] to-[#F2F6F8] p-3 sm:p-5 md:p-7.5 shadow-[0_45px_60px_-15px_rgba(0,0,0,0.12)] filter drop-shadow-[0_5px_20px_rgba(200,220,230,0.6)]">
                     <div className="overflow-hidden rounded-xl sm:rounded-2xl bg-white shadow-sm">
                         <Image
                             src="/assets/Toolbar.svg"
