@@ -6,6 +6,7 @@ import React from 'react';
 import { usePathname, useRouter } from "next/navigation";
 import { authClient } from '@/lib/auth-client';
 
+
 const Navbar = ({ initialUser }) => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const NavLinks = [
