@@ -3,7 +3,7 @@ import { useState } from "react";
 import { authClient } from "@/lib/auth-client";
 import { Button, Description, FieldError, Form, Input, Label, TextField, toast } from "@heroui/react";
 import Link from "next/link";
-import { useRouter } from "next/navigation"
+import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
 import { motion } from "motion/react";
 import { HiOutlineMail } from "react-icons/hi";
@@ -64,8 +64,16 @@ const LoginPage = () => {
             transition={{ duration: 0.5 }}
             className="min-h-screen flex justify-center items-center p-4">
 
-            <div className="flex flex-col justify-center items-center w-full max-w-md rounded-2xl p-8 bg-white shadow-lg space-y-4">
-                <div className="space-y-1 flex flex-col text-center">
+            {/* Added relative and overflow-hidden to the main card */}
+            <div className="relative flex flex-col justify-center items-center w-full max-w-md rounded-2xl p-8 bg-white shadow-lg space-y-4 overflow-hidden">
+                
+                {/* Ambient Top-Right Glow */}
+                <div 
+                    className="absolute -top-12 -right-12 w-48 h-48 bg-[#6EFF00] opacity-40 rounded-full blur-3xl pointer-events-none z-0" 
+                    aria-hidden="true" 
+                />
+
+                <div className="space-y-1 flex flex-col text-center relative z-10">
                     <Image
                         src="/assets/login_logo.svg"
                         alt="Logo"
@@ -78,7 +86,7 @@ const LoginPage = () => {
                     <p className="text-gray-600 text-sm">Login your account below</p>
                 </div>
 
-                <Form className="flex w-full flex-col gap-3" onSubmit={onSubmit}>
+                <Form className="flex w-full flex-col gap-3 relative z-10" onSubmit={onSubmit}>
                     <TextField
                         isRequired
                         name="email"
