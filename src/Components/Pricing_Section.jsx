@@ -53,10 +53,10 @@ const buttonFillClass = {
 // Motion Variants mapping directly to image instructions
 const headingVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-        opacity: 1, 
-        y: 0, 
-        transition: { duration: 0.6, ease: 'easeOut' } 
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: 'easeOut' }
     },
 };
 
@@ -71,10 +71,10 @@ const cardsContainerVariants = {
 
 const cardVariants = {
     hidden: { opacity: 0, y: 40 },
-    visible: { 
-        opacity: 1, 
-        y: 0, 
-        transition: { duration: 0.5, ease: 'easeOut' } 
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5, ease: 'easeOut' }
     },
 };
 
@@ -89,10 +89,10 @@ const listContainerVariants = {
 
 const listItemVariants = {
     hidden: { opacity: 0, x: -10 },
-    visible: { 
-        opacity: 1, 
-        x: 0, 
-        transition: { duration: 0.3, ease: 'easeOut' } 
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: { duration: 0.3, ease: 'easeOut' }
     },
 };
 
@@ -102,23 +102,23 @@ const Pricing_Section = () => {
             <div className="relative bg-[url('/assets/pricing_section_bg_png.png')] bg-cover bg-no-repeat bg-center overflow-hidden">
 
                 {/* Heading + subtitle: Fade up as you scroll to them */}
-                <motion.div 
+                <motion.div
                     className="mt-24 mx-5 md:mx-24"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: '-50px' }}
                     variants={headingVariants}
                 >
-                    <h2 className="text-white font-helvetica text-3xl md:w-[37.5rem]">
+                    <h2 className="text-white font-helvetica text-5xl md:w-210">
                         Check Out Our Pricing Plans for Both Monthly and Yearly Subscriptions
                     </h2>
-                    <p className="mt-2.5 md:w-[41.25rem] font-helvetica text-[10px] text-[#B7B7B7]">
+                    <p className="mt-2.5 md:w-190 text-[18px] text-[#B7B7B7]">
                         We understand that as your business grows, your needs evolve. Thats why our flexible plans are designed to adapt and scale seamlessly alongside your business
                     </p>
                 </motion.div>
 
                 {/* Cards Container */}
-                <motion.div 
+                <motion.div
                     className="flex justify-center items-end gap-10 flex-wrap mt-24 pb-24"
                     variants={cardsContainerVariants}
                     initial="hidden"
@@ -136,23 +136,23 @@ const Pricing_Section = () => {
                         >
                             {/* Card's icon on hover: Small rotate + scale riding along with card hover */}
                             <motion.div
-                                className="w-10 h-10 inline-block"
+                                className="w-14 h-14 inline-block ml-5"
                                 whileHover={{ scale: 1.15, rotate: 6 }}
                                 transition={{ type: 'spring', stiffness: 300, damping: 15 }}
                             >
-                                <Image src={plan.icon} alt={plan.title} width={40} height={40} />
+                                <Image src={plan.icon} alt={plan.title} width={56} height={56} />
                             </motion.div>
 
                             {/* title */}
-                            <h3 className="mt-6 font-helvetica text-2xl text-white">{plan.title}</h3>
+                            <h3 className="mt-6 font-helvetica text-3xl text-white">{plan.title}</h3>
 
                             {/* subtitle */}
-                            <p className="mt-2 font-helvetica text-[10px] text-[#B7B7B7]">{plan.subtitle}</p>
+                            <p className="mt-2 font-helvetica text-[16px] text-[#B7B7B7]">{plan.subtitle}</p>
 
                             {/* price */}
                             <div className="mt-4 flex items-baseline gap-1.5">
-                                <span className="font-helvetica text-[28px] text-[#FFFFFF]">{plan.price}</span>
-                                <span className="font-helvetica text-[10px] text-[#9FE770]">{plan.period}</span>
+                                <span className="font-helvetica text-[50px] text-[#FFFFFF]">{plan.price}</span>
+                                <span className="font-helvetica text-[16px] text-[#9FE770]">{plan.period}</span>
                             </div>
 
                             {/* Buttons: Press down slightly on click, grow slightly on hover */}
@@ -175,7 +175,7 @@ const Pricing_Section = () => {
                                             whileHover={{ scale: 1.02 }}
                                             whileTap={{ scale: 0.97 }}
                                             transition={{ duration: 0.15 }}
-                                            className="w-64 h-11 rounded-lg p-px bg-gradient-to-b from-[#DEDEDE]/[0.32] to-[#787878]/[0.12] cursor-pointer"
+                                            className="w-64 h-11 rounded-lg p-px bg-linear-to-b from-[#DEDEDE]/32 to-[#787878]/12 cursor-pointer"
                                         >
                                             <span
                                                 className={`${buttonFillClass[btn.variant]} flex items-center justify-between h-full rounded-[7px] px-4 text-white text-sm font-helvetica`}
@@ -190,8 +190,8 @@ const Pricing_Section = () => {
 
                             {/* Feature list: Lines tick in one at a time */}
                             <div className="mt-6">
-                                <p className="font-helvetica text-sm font-semibold text-white">Whats Include</p>
-                                <motion.ul 
+                                <p className="text-sm font-semibold text-white">Whats Include</p>
+                                <motion.ul
                                     className="mt-3 flex flex-col gap-2.5"
                                     variants={listContainerVariants}
                                     initial="hidden"
@@ -199,13 +199,13 @@ const Pricing_Section = () => {
                                     viewport={{ once: true }}
                                 >
                                     {plan.features.map((feature) => (
-                                        <motion.li 
-                                            key={feature} 
+                                        <motion.li
+                                            key={feature}
                                             variants={listItemVariants}
                                             className="flex items-center gap-2.5"
                                         >
                                             <Image src="/assets/icons/Verify_Icon.svg" alt="" width={16} height={16} />
-                                            <span className="font-helvetica text-sm text-[#B7B7B7]">{feature}</span>
+                                            <span className="text-sm text-white">{feature}</span>
                                         </motion.li>
                                     ))}
                                 </motion.ul>

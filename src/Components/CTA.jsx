@@ -40,7 +40,7 @@ const CTASection = () => {
                     variants={fadeUp}
                     onSubmit={(e) => e.preventDefault()}
                     // White background with the 7% CACACA applied as a subtle shadow/border combination
-                    className="mt-10 flex w-full max-w-[500px] items-center rounded-2xl bg-[#FFFFFF] p-1.5 shadow-[0_8px_30px_rgba(202,202,202,0.07)] ring-1 ring-[#CACACA]/20"
+                    className="mt-10 flex w-full max-w-125 items-center rounded-2xl bg-[#FFFFFF] p-1.5 shadow-[0_8px_30px_rgba(202,202,202,0.07)] ring-1 ring-[#CACACA]/20"
                 >
                     <input
                         type="email"
