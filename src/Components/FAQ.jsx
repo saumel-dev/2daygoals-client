@@ -61,11 +61,11 @@ const FAQItem = ({ faq, isOpen, onToggle }) => {
                     {/* plus/minus icon — same two bars the whole time; the
                         "vertical" one just rotates flat to become the minus */}
                     <div className="relative w-4 h-4 shrink-0">
-                        <span className="absolute top-1/2 left-0 -translate-y-1/2 w-4 h-[2px] bg-[#0B0B0B]" />
+                        <span className="absolute top-1/2 left-0 -translate-y-1/2 w-4 h-0.5 bg-[#0B0B0B]" />
                         <motion.span
                             animate={{ rotate: isOpen ? 0 : 90 }}
                             transition={{ duration: 0.3, ease: 'easeInOut' }}
-                            className="absolute top-1/2 left-0 -translate-y-1/2 w-4 h-[2px] bg-[#0B0B0B]"
+                            className="absolute top-1/2 left-0 -translate-y-1/2 w-4 h-0.5 bg-[#0B0B0B]"
                         />
                     </div>
                 </div>
