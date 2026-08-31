@@ -45,7 +45,7 @@ const MobilePromoSection = () => {
                     </motion.h2>
 
                     <motion.p variants={fadeUp} className="mt-4 text-[20px] md:text-[24px] text-black/64 md:w-150">
-                        Currently we are not building app comming soon. Now, you can use Chrome sortcurt
+                        Currently we are not building, app comming soon. Now, you can use Chrome sortcut
                     </motion.p>
 
                     {/* Register button */}
