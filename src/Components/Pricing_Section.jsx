@@ -103,7 +103,7 @@ const Pricing_Section = () => {
 
                 {/* Heading + subtitle: Fade up as you scroll to them */}
                 <motion.div
-                    className="mt-24 mx-5 md:mx-24"
+                    className="mt-24 mx-15 md:mx-44"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: '-50px' }}

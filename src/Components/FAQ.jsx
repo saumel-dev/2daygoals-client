@@ -103,8 +103,8 @@ const FAQ_Section = () => {
     return (
         // No background here on purpose — the body's gradient (see globals.css)
         // shows straight through since nothing is painted over it.
-        <section className="py-24 px-5">
-            <div className="max-w-3xl mx-auto">
+        <section className="container mx-auto py-24 px-5">
+            <div className="">
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
