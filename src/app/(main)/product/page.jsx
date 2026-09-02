@@ -1,4 +1,5 @@
 'use client'
+import MobilePromoSection from "@/Components/MobilePromoSection";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from 'next/link';
@@ -15,7 +16,7 @@ const fadeUp = {
 
 const Product_Page = () => {
     return (
-        <section className=" px-5 mt-10 md:mt-20">
+        <section className=" mt-10 md:mt-20">
             <div className="container mx-auto">
 
                 {/* Heading: Large on desktop (80px), scaled down for mobile */}
@@ -176,6 +177,7 @@ const Product_Page = () => {
                     </div>
                 </div>
             </div>
+         <MobilePromoSection></MobilePromoSection>
         </section>
     );
 };
