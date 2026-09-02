@@ -1,15 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { FaArrowRight } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'motion/react';
-import { Button } from '@heroui/react';
 import Link from 'next/link';
+import MobilePromoSection from '@/Components/MobilePromoSection';
+import CTASection from '@/Components/CTA';
 
+// --- DATA ---
 const faqs = [
-    {
-        question: 'Is the app completely free to use?',
-        answer: 'Yes, the app is free to use with ads. Users can enjoy the core features without any cost.',
-    },
+    { question: 'Is the app completely free to use?', answer: 'Yes, the app is free to use with ads. Users can enjoy the core features without any cost.' },
     { question: 'What benefits do I get when I purchase a subscription?', answer: 'Replace with the real answer copy.' },
     { question: 'How do I manage my tasks and projects in the app?', answer: 'Replace with the real answer copy.' },
     { question: 'Can I share my tasks or projects with others?', answer: 'Replace with the real answer copy.' },
@@ -20,28 +20,25 @@ const faqs = [
     { question: 'Is customer support available if I encounter issues?', answer: 'Replace with the real answer copy.' },
 ];
 
-// Heading/description entrance — same fade-up pattern used in Pricing_Section
-// so the whole site's scroll-in feel stays consistent.
+// --- ANIMATION VARIANTS ---
 const fadeUp = {
-    hidden: { opacity: 0, y: 16 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+    hidden: { opacity: 0, y: 24 },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    },
 };
 
-// Each question fades/slides in once, when the list first scrolls into view.
 const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } },
 };
 
+// --- REUSABLE FAQ ITEM COMPONENT ---
 const FAQItem = ({ faq, isOpen, onToggle }) => {
     return (
-        // Outer wrapper: ONLY handles the one-time scroll entrance (inherits
-        // hidden/visible from the list below). It deliberately has no other
-        // animate prop, or it would stop listening to that inherited state.
         <motion.div variants={itemVariants}>
-            {/* Inner wrapper: handles the repeatable open/close background
-                flip — transparent when closed, white card when open — driven
-                by isOpen, independent of the entrance animation above */}
             <motion.div
                 onClick={onToggle}
                 animate={{
@@ -60,8 +57,6 @@ const FAQItem = ({ faq, isOpen, onToggle }) => {
                         {faq.question}
                     </motion.h3>
 
-                    {/* plus/minus icon — same two bars the whole time; the
-                        "vertical" one just rotates flat to become the minus */}
                     <div className="relative w-4 h-4 shrink-0">
                         <span className="absolute top-1/2 left-0 -translate-y-1/2 w-4 h-0.5 bg-[#0B0B0B]" />
                         <motion.span
@@ -92,10 +87,8 @@ const FAQItem = ({ faq, isOpen, onToggle }) => {
     );
 };
 
-const FAQ_Section = () => {
-    // null = nothing open. Setting a new index automatically "closes" whatever
-    // was open before, since only one index can ever be stored at a time —
-    // that single piece of state IS the accordion behavior from point 4.
+// --- MAIN PAGE COMPONENT ---
+const MoreFAQSection = () => {
     const [openIndex, setOpenIndex] = useState(null);
 
     const handleToggle = (index) => {
@@ -103,34 +96,56 @@ const FAQ_Section = () => {
     };
 
     return (
-        // No background here on purpose — the body's gradient (see globals.css)
-        // shows straight through since nothing is painted over it.
-        <section className="container mx-auto py-24 px-5">
-            <div className="">
+        <section className="mt-10 md:mt-20 pb-24">
+            <div className="container mx-auto px-5">
+
+                {/* Heading */}
+                <motion.h1
+                    initial="hidden"
+                    animate="show"
+                    variants={fadeUp}
+                    className="font-helvetica text-[46px] md:text-[80px] font-bolder leading-[1.1] tracking-tight text-[#111] max-w-2xl"
+                >
+                    Frequently Asked Questions
+                </motion.h1>
+
+                {/* Paragraph and Register Button */}
                 <motion.div
                     initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.5 }}
-                    variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
+                    animate="show"
+                    variants={fadeUp}
+                    className="flex flex-col md:flex-row md:items-end justify-between mt-6 md:mt-8 gap-8"
                 >
-                    <motion.h2 variants={fadeUp} className="font-helvetica text-[50px] text-[#0B0B0B]">
-                        Frequently Asked Questions
-                    </motion.h2>
-                    <div className="flex gap-10"><motion.p variants={fadeUp} className="mt-4 text-[18px] text-[#313131]">
+                    <p className="text-[16px] md:text-[18px] max-w-[570px] leading-relaxed text-[#333]">
                         Yet bed any for assistance indulgence unpleasing. Not thoughts all exercise blessing. Indulgence way everything joy alteration boisterous the attachment.
-                    </motion.p>
-                        <Link href="/FAQ" className="text-white bg-black px-4 py-2 rounded-md hover:no-underline no-underline">
-                            More FAQs
+                    </p>
+
+                    <div className="shrink-0">
+                        <Link href="/register" className="group inline-flex">
+                            <motion.span
+                                whileHover={{ scale: 1.03 }}
+                                whileTap={{ scale: 0.97 }}
+                                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                                className="inline-flex items-center gap-3 rounded-[14px] bg-black p-1.5 pr-5 shadow-lg"
+                            >
+                                <motion.span className="flex h-9 w-12 items-center justify-center rounded-xl bg-linear-to-r from-[#73FDB2] to-[#6EFF00]">
+                                    <FaArrowRight className="h-4 w-4 text-black" />
+                                </motion.span>
+                                <span className="text-sm font-medium text-white pb-0.5">
+                                    Register - its Free
+                                </span>
+                            </motion.span>
                         </Link>
                     </div>
                 </motion.div>
 
+                {/* FAQ Accordion List (Imported from Homepage) */}
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.1 }}
                     variants={{ visible: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } } }}
-                    className="mt-10 flex flex-col gap-4"
+                    className="mt-12 md:mt-16 flex flex-col gap-4"
                 >
                     {faqs.map((faq, index) => (
                         <FAQItem
@@ -141,9 +156,12 @@ const FAQ_Section = () => {
                         />
                     ))}
                 </motion.div>
+
             </div>
+            <MobilePromoSection></MobilePromoSection>
+            <CTASection></CTASection>
         </section>
     );
 };
 
-export default FAQ_Section;
+export default MoreFAQSection;
