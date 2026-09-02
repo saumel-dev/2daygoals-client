@@ -17,8 +17,8 @@ const fadeUp = {
 
 const Product_Page = () => {
     return (
-        <section className=" mt-10 md:mt-20">
-            <div className="container mx-auto">
+        <section className="mt-10 md:mt-20">
+            <div className="container mx-auto px-5">
 
                 {/* Heading: Large on desktop (80px), scaled down for mobile */}
                 <motion.h1
@@ -66,120 +66,122 @@ const Product_Page = () => {
                 </motion.div>
 
             </div>
-            <div className="container mx-auto mt-10 md:mt-20">
-                <h1 className="text-5xl sm:text-4xl font-medium font-helvetica">
-                    Share your Problem
-                </h1>
-                <p className="text-xl text-[#313131] mt-4">Open up and share your challenges for collaborative solutions and support.</p>
-                <div
-                    className="relative z-10 mx-auto mb-12 mt-10 max-w-5xl sm:mt-16 sm:mb-16"
-                >
-                    <div className="relative rounded-2xl sm:rounded-3xl bg-linear-to-b from-[#DEE9EE] to-[#F2F6F8] p-3 sm:p-5 md:p-7.5">
-                        <div className="overflow-hidden rounded-xl sm:rounded-2xl bg-white shadow-sm">
-                            <Image
-                                src="/assets/Toolbar.svg"
-                                alt=""
-                                width={1440}
-                                height={48}
-                                className="w-full h-auto"
-                            />
-                            <Image
-                                src="/assets/Homepage_Final.svg"
-                                alt="2daygoals product preview"
-                                width={1440}
-                                height={820}
-                                className="w-full h-auto"
-                            />
+            <div className="px-5">
+                <div className="container mx-auto mt-10 md:mt-20">
+                    <h1 className="text-5xl sm:text-4xl font-medium font-helvetica">
+                        Share your Problem
+                    </h1>
+                    <p className="text-xl text-[#313131] mt-4">Open up and share your challenges for collaborative solutions and support.</p>
+                    <div
+                        className="relative z-10 mx-auto mb-12 mt-10 max-w-5xl sm:mt-16 sm:mb-16"
+                    >
+                        <div className="relative rounded-2xl sm:rounded-3xl bg-linear-to-b from-[#DEE9EE] to-[#F2F6F8] p-3 sm:p-5 md:p-7.5">
+                            <div className="overflow-hidden rounded-xl sm:rounded-2xl bg-white shadow-sm">
+                                <Image
+                                    src="/assets/Toolbar.svg"
+                                    alt=""
+                                    width={1440}
+                                    height={48}
+                                    className="w-full h-auto"
+                                />
+                                <Image
+                                    src="/assets/Homepage_Final.svg"
+                                    alt="2daygoals product preview"
+                                    width={1440}
+                                    height={820}
+                                    className="w-full h-auto"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="container mx-auto mt-10 md:mt-20">
+                    <h1 className="text-5xl sm:text-4xl font-medium font-helvetica">
+                        Manage your Task
+                    </h1>
+                    <p className="text-xl text-[#313131] mt-4">Efficiently organize and oversee your tasks for enhanced productivity and goal achievement.</p>
+                    <div
+                        className="relative z-10 mx-auto mb-12 mt-10 max-w-5xl sm:mt-16 sm:mb-16"
+                    >
+                        <div className="relative rounded-2xl sm:rounded-3xl bg-linear-to-b from-[#DEE9EE] to-[#F2F6F8] p-3 sm:p-5 md:p-7.5">
+                            <div className="overflow-hidden rounded-xl sm:rounded-2xl bg-white shadow-sm">
+                                <Image
+                                    src="/assets/Toolbar.svg"
+                                    alt=""
+                                    width={1440}
+                                    height={48}
+                                    className="w-full h-auto"
+                                />
+                                <Image
+                                    src="/assets/Homepage_Final.svg"
+                                    alt="2daygoals product preview"
+                                    width={1440}
+                                    height={820}
+                                    className="w-full h-auto"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="container mx-auto mt-10 md:mt-20">
+                    <h1 className="text-5xl sm:text-4xl font-medium font-helvetica">
+                        Chats On Friends
+                    </h1>
+                    <p className="text-xl text-[#313131] mt-4">Engage in lively conversations and build connections with friends through delightful chats.</p>
+                    <div
+                        className="relative z-10 mx-auto mb-12 mt-10 max-w-5xl sm:mt-16 sm:mb-16"
+                    >
+                        <div className="relative rounded-2xl sm:rounded-3xl bg-linear-to-b from-[#DEE9EE] to-[#F2F6F8] p-3 sm:p-5 md:p-7.5">
+                            <div className="overflow-hidden rounded-xl sm:rounded-2xl bg-white shadow-sm">
+                                <Image
+                                    src="/assets/Toolbar.svg"
+                                    alt=""
+                                    width={1440}
+                                    height={48}
+                                    className="w-full h-auto"
+                                />
+                                <Image
+                                    src="/assets/Homepage_Final.svg"
+                                    alt="2daygoals product preview"
+                                    width={1440}
+                                    height={820}
+                                    className="w-full h-auto"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="container mx-auto mt-10 md:mt-20">
+                    <h1 className="text-5xl sm:text-4xl font-medium font-helvetica">
+                        Note On Calendar
+                    </h1>
+                    <p className="text-xl text-[#313131] mt-4">Mark important dates and events with precision on your calendar for effective time management.</p>
+                    <div
+                        className="relative z-10 mx-auto mb-12 mt-10 max-w-5xl sm:mt-16 sm:mb-16"
+                    >
+                        <div className="relative rounded-2xl sm:rounded-3xl bg-linear-to-b from-[#DEE9EE] to-[#F2F6F8] p-3 sm:p-5 md:p-7.5">
+                            <div className="overflow-hidden rounded-xl sm:rounded-2xl bg-white shadow-sm">
+                                <Image
+                                    src="/assets/Toolbar.svg"
+                                    alt=""
+                                    width={1440}
+                                    height={48}
+                                    className="w-full h-auto"
+                                />
+                                <Image
+                                    src="/assets/Homepage_Final.svg"
+                                    alt="2daygoals product preview"
+                                    width={1440}
+                                    height={820}
+                                    className="w-full h-auto"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="container mx-auto mt-10 md:mt-20">
-                <h1 className="text-5xl sm:text-4xl font-medium font-helvetica">
-                    Manage your Task
-                </h1>
-                <p className="text-xl text-[#313131] mt-4">Efficiently organize and oversee your tasks for enhanced productivity and goal achievement.</p>
-                <div
-                    className="relative z-10 mx-auto mb-12 mt-10 max-w-5xl sm:mt-16 sm:mb-16"
-                >
-                    <div className="relative rounded-2xl sm:rounded-3xl bg-linear-to-b from-[#DEE9EE] to-[#F2F6F8] p-3 sm:p-5 md:p-7.5">
-                        <div className="overflow-hidden rounded-xl sm:rounded-2xl bg-white shadow-sm">
-                            <Image
-                                src="/assets/Toolbar.svg"
-                                alt=""
-                                width={1440}
-                                height={48}
-                                className="w-full h-auto"
-                            />
-                            <Image
-                                src="/assets/Homepage_Final.svg"
-                                alt="2daygoals product preview"
-                                width={1440}
-                                height={820}
-                                className="w-full h-auto"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="container mx-auto mt-10 md:mt-20">
-                <h1 className="text-5xl sm:text-4xl font-medium font-helvetica">
-                    Chats On Friends
-                </h1>
-                <p className="text-xl text-[#313131] mt-4">Engage in lively conversations and build connections with friends through delightful chats.</p>
-                <div
-                    className="relative z-10 mx-auto mb-12 mt-10 max-w-5xl sm:mt-16 sm:mb-16"
-                >
-                    <div className="relative rounded-2xl sm:rounded-3xl bg-linear-to-b from-[#DEE9EE] to-[#F2F6F8] p-3 sm:p-5 md:p-7.5">
-                        <div className="overflow-hidden rounded-xl sm:rounded-2xl bg-white shadow-sm">
-                            <Image
-                                src="/assets/Toolbar.svg"
-                                alt=""
-                                width={1440}
-                                height={48}
-                                className="w-full h-auto"
-                            />
-                            <Image
-                                src="/assets/Homepage_Final.svg"
-                                alt="2daygoals product preview"
-                                width={1440}
-                                height={820}
-                                className="w-full h-auto"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="container mx-auto mt-10 md:mt-20">
-                <h1 className="text-5xl sm:text-4xl font-medium font-helvetica">
-                    Note On Calendar
-                </h1>
-                <p className="text-xl text-[#313131] mt-4">Mark important dates and events with precision on your calendar for effective time management.</p>
-                <div
-                    className="relative z-10 mx-auto mb-12 mt-10 max-w-5xl sm:mt-16 sm:mb-16"
-                >
-                    <div className="relative rounded-2xl sm:rounded-3xl bg-linear-to-b from-[#DEE9EE] to-[#F2F6F8] p-3 sm:p-5 md:p-7.5">
-                        <div className="overflow-hidden rounded-xl sm:rounded-2xl bg-white shadow-sm">
-                            <Image
-                                src="/assets/Toolbar.svg"
-                                alt=""
-                                width={1440}
-                                height={48}
-                                className="w-full h-auto"
-                            />
-                            <Image
-                                src="/assets/Homepage_Final.svg"
-                                alt="2daygoals product preview"
-                                width={1440}
-                                height={820}
-                                className="w-full h-auto"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-         <MobilePromoSection></MobilePromoSection>
-         <CTASection></CTASection>
+            <MobilePromoSection></MobilePromoSection>
+            <CTASection></CTASection>
         </section>
     );
 };
