@@ -1,4 +1,5 @@
 'use client'
+import CTASection from "@/Components/CTA";
 import MobilePromoSection from "@/Components/MobilePromoSection";
 import { motion } from "motion/react";
 import Image from "next/image";
@@ -178,6 +179,7 @@ const Product_Page = () => {
                 </div>
             </div>
          <MobilePromoSection></MobilePromoSection>
+         <CTASection></CTASection>
         </section>
     );
 };
