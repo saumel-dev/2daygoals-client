@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { motion } from "motion/react";
 import { FaArrowRight } from 'react-icons/fa';
 import Link from 'next/link';
+import { blogs } from '@/lib/data/blogs';
+import BlogCard from '@/Components/Marketing_Website/BlogCard';
 
 const fadeUp = {
     hidden: { opacity: 0, y: 24 },
@@ -61,7 +63,7 @@ const HelpCenter_page = () => {
                     variants={fadeUp}
                     className="flex flex-col md:flex-row md:items-end justify-between mt-6 md:mt-8 gap-8"
                 >
-                    <p className="text-[16px] md:text-[18px] max-w-[570px] leading-relaxed text-[#333]">
+                    <p className="text-[16px] md:text-[18px] max-w-142.5 leading-relaxed text-[#333]">
                         Our product is designed to provide comprehensive support, helping you effortlessly navigate through various tasks, organize your workload efficiently, and enhance collaboration on projects.
                     </p>
 
@@ -214,6 +216,25 @@ const HelpCenter_page = () => {
                         </div>
                     </div>
                 </div>
+                <motion.div
+                    initial="hidden"
+                    animate="show"
+                    variants={fadeUp}
+                    className="mt-20"
+                >
+                    <h2 className="font-helvetica text-[50px] font-bolder leading-[1.1] text-[#111]">
+                        Popular Blogs
+                    </h2>
+                    <p className="text-[18px] font-normal text-[#313131] mt-3 max-w-142.5">
+                        Learn about the todaygoals.com products and features most loved by our customers
+                    </p>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                        {blogs.slice(0, 3).map((post) => (
+                            <BlogCard key={post.slug} post={post} />
+                        ))}
+                    </div>
+                </motion.div>
             </div>
         </section>
     );
