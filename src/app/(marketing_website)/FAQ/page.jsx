@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'motion/react';
 import Link from 'next/link';
-import MobilePromoSection from '@/Components/MobilePromoSection';
-import CTASection from '@/Components/CTA';
+import MobilePromoSection from '@/Components/Marketing_Website/MobilePromoSection';
+import CTASection from '@/Components/Marketing_Website/CTA';
 
 // --- DATA ---
 const faqs = [

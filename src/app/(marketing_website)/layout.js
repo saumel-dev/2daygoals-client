@@ -1,20 +1,20 @@
-import "./globals.css";
-import Navbar from "@/Components/Navbar";
+import "./../globals.css"
+import Navbar from "@/Components/Marketing_Website/Navbar";
 import localFont from 'next/font/local';
 import { Toast } from '@heroui/react';
-import Footer from "@/Components/Footer";
+import Footer from "@/Components/Marketing_Website/Footer";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 
 const lufga = localFont({
   src: [
     {
-      path: "../../public/fonts/Lufga-Regular.otf",
+      path: "../../../public/fonts/Lufga-Regular.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/fonts/Lufga-Bold.otf",
+      path: "../../../public/fonts/Lufga-Bold.otf",
       weight: "700",
       style: "normal",
     }
@@ -25,12 +25,12 @@ const lufga = localFont({
 const helveticaNow = localFont({
   src: [
     {
-      path: "../../public/fonts/HelveticaNowDisplay-Bold.woff2",
+      path: "../../../public/fonts/HelveticaNowDisplay-Bold.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/fonts/HelveticaNowDisplay-Regular.woff2",
+      path: "../../../public/fonts/HelveticaNowDisplay-Regular.woff2",
       weight: "700",
       style: "normal",
     }

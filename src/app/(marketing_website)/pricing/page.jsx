@@ -3,9 +3,9 @@ import React from 'react';
 import { motion } from "motion/react";
 import { FaArrowRight } from 'react-icons/fa';
 import Link from 'next/link';
-import Pricing_Section from '@/Components/Pricing_Section';
-import MobilePromoSection from '@/Components/MobilePromoSection';
-import CTASection from '@/Components/CTA';
+import Pricing_Section from '@/Components/Marketing_Website/Pricing_Section';
+import MobilePromoSection from '@/Components/Marketing_Website/MobilePromoSection';
+import CTASection from '@/Components/Marketing_Website/CTA';
 const fadeUp = {
     hidden: { opacity: 0, y: 24 },
     show: {
@@ -18,6 +18,9 @@ const Pricing_page = () => {
     return (
         <section className="mt-10 md:mt-20">
             <div className="container mx-auto px-5 mb-25">
+                <div className="inline-flex items-center rounded-md bg-[#DFFFCA] px-2.5 py-0.5">
+                    <p className="text-[#163300] text-[14px] font-medium">Subscriptions</p>
+                </div>
                 <motion.h1
                     initial="hidden"
                     animate="show"

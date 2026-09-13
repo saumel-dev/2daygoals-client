@@ -1,6 +1,6 @@
 'use client'
-import CTASection from "@/Components/CTA";
-import MobilePromoSection from "@/Components/MobilePromoSection";
+import CTASection from "@/Components/Marketing_Website/CTA";
+import MobilePromoSection from "@/Components/Marketing_Website/MobilePromoSection";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from 'next/link';
