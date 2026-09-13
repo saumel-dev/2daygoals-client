@@ -98,7 +98,7 @@ const CustomerStories_page = () => {
                     variants={fadeUp}
                     className="flex flex-col md:flex-row md:items-end justify-between mt-6 md:mt-8 gap-8"
                 >
-                    <p className="text-[16px] md:text-[18px] max-w-[570px] leading-relaxed text-[#333]">
+                    <p className="text-[16px] md:text-[18px] max-w-142.5 leading-relaxed text-[#333]">
                         See how teams are using todaygoals.com to save time and get more done.
                     </p>
 

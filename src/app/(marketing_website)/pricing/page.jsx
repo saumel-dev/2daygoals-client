@@ -36,7 +36,7 @@ const Pricing_page = () => {
                     className="flex flex-col md:flex-row md:items-end justify-between mt-6 md:mt-8 gap-8"
                 >
                     {/* Paragraph: Left aligned, restricted width matching your screenshot (545px) */}
-                    <p className="text-[16px] md:text-[18px] max-w-[570px] leading-relaxed text-[#333]">
+                    <p className="text-[16px] md:text-[18px] max-w-142.5 leading-relaxed text-[#333]">
                         Get work done the fastest way possible – manage tasks, write notes, organize projects, and share whatever you want with this powerful productivity tool!
                     </p>
 

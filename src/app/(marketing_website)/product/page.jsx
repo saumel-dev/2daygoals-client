@@ -39,7 +39,7 @@ const Product_Page = () => {
                     className="flex flex-col md:flex-row md:items-end justify-between mt-6 md:mt-8 gap-8"
                 >
                     {/* Paragraph: Left aligned, restricted width matching your screenshot (545px) */}
-                    <p className="text-[16px] md:text-[18px] max-w-[570px] leading-relaxed text-[#333]">
+                    <p className="text-[16px] md:text-[18px] max-w-142.5 leading-relaxed text-[#333]">
                         Our product is designed to provide comprehensive support, helping you effortlessly navigate through various tasks, organize your workload efficiently, and enhance collaboration on projects.
                     </p>
 
