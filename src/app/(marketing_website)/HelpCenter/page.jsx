@@ -79,7 +79,7 @@ const HelpCenter_page = () => {
                                     <FaArrowRight className="h-4 w-4 text-black" />
                                 </motion.span>
                                 <span className="text-sm font-medium text-white pb-0.5">
-                                    Register - it's Free
+                                    Register - its Free
                                 </span>
                             </motion.span>
                         </Link>
