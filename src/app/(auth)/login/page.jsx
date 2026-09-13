@@ -75,7 +75,7 @@ const LoginPage = () => {
 
                 <div className="space-y-1 flex flex-col text-center relative z-10">
                     <Image
-                        src="/assets/login_logo.svg"
+                        src="/assets/Marketing/Logo/login_logo.svg"
                         alt="Logo"
                         width={48}
                         height={48}

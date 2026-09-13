@@ -249,7 +249,7 @@ const CustomerStories_page = () => {
                             <div className="flex items-center justify-between mt-5">
                                 <div className="flex items-center gap-3">
                                     <Image
-                                        src="/assets/Review/user.svg"
+                                        src="/assets/Marketing/Review/user.svg"
                                         alt={item.name}
                                         width={40}
                                         height={40}
@@ -264,7 +264,7 @@ const CustomerStories_page = () => {
                                 </div>
 
                                 <Image
-                                    src="/assets/Review/logo.svg"
+                                    src="/assets/Marketing/Review/logo.svg"
                                     alt="2daygoals"
                                     width={110}
                                     height={24}
@@ -275,7 +275,7 @@ const CustomerStories_page = () => {
                                 {Array.from({ length: 5 }).map((_, i) => (
                                     <Image
                                         key={i}
-                                        src="/assets/Review/star.svg"
+                                        src="/assets/Marketing/Review/star.svg"
                                         alt="star"
                                         width={16}
                                         height={16}

@@ -54,7 +54,7 @@ export default async function RootLayout({ children }) {
         {/* Background Decorative Container */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
           <img
-            src="/assets/hero.svg"
+            src="/assets/Marketing/Hero/Background_logo/hero.svg"
             alt=""
             className="absolute -right-[7%] -top-2 w-[420px] max-w-none select-none sm:w-[520px] lg:w-[1000px]"
           />

@@ -6,7 +6,7 @@ import React from 'react';
 import { usePathname, useRouter } from "next/navigation";
 import { authClient } from '@/lib/auth-client';
 
-const PRODUCT_ICON_PATH = '/assets/Product_Hover/';
+const PRODUCT_ICON_PATH = '/assets/Marketing/Product_Hover/';
 
 const PRODUCT_FEATURES = [
     {
@@ -122,7 +122,7 @@ const Navbar = ({ initialUser }) => {
                         <div className="flex items-center">
                             <Link href="/">
                                 <Image
-                                    src="/assets/logo.svg"
+                                    src="/assets/Marketing/Logo/logo.svg"
                                     alt="Logo"
                                     width={200}
                                     height={40}

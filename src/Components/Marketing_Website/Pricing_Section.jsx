@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 const plans = [
     {
         id: 'free',
-        icon: '/assets/icons/fire.svg',
+        icon: '/assets/Marketing/Pricing_Section/fire.svg',
         title: 'Free Forever',
         subtitle: 'No minimum commitment pause or cancel anytime',
         price: '0$',
@@ -19,7 +19,7 @@ const plans = [
     },
     {
         id: 'monthly',
-        icon: '/assets/icons/arrow.svg',
+        icon: '/assets/Marketing/Pricing_Section/arrow.svg',
         title: 'Monthly',
         highlighted: true,
         subtitle: 'No minimum commitment pause or cancel anytime',
@@ -33,7 +33,7 @@ const plans = [
     },
     {
         id: 'yearly',
-        icon: '/assets/icons/lock.svg',
+        icon: '/assets/Marketing/Pricing_Section/lock.svg',
         title: 'Yearly',
         subtitle: 'No minimum commitment pause or cancel anytime',
         price: '199$',
@@ -99,7 +99,7 @@ const listItemVariants = {
 const Pricing_Section = () => {
     return (
         <section>
-            <div className="relative bg-[url('/assets/pricing_section_bg_png.png')] bg-cover bg-no-repeat bg-center overflow-hidden">
+            <div className="relative bg-[url('/assets/Marketing/Pricing_Section/pricing_section_bg.png')] bg-cover bg-no-repeat bg-center overflow-hidden">
 
                 {/* Heading + subtitle: Fade up as you scroll to them */}
                 <motion.div
@@ -132,7 +132,7 @@ const Pricing_Section = () => {
                             // Card on hover: Lifts up 8px
                             whileHover={{ y: -8 }}
                             transition={{ duration: 0.25, ease: 'easeOut' }}
-                            className={`relative rounded-2xl bg-[url('/assets/pricing_bg.png')] bg-cover bg-center bg-no-repeat overflow-hidden w-96 p-8 ${plan.highlighted ? 'md:pt-16' : ''}`}
+                            className={`relative rounded-2xl bg-[url('/assets/Marketing/Pricing_Section/pricing_card_bg.png')] bg-cover bg-center bg-no-repeat overflow-hidden w-96 p-8 ${plan.highlighted ? 'md:pt-16' : ''}`}
                         >
                             {/* Card's icon on hover: Small rotate + scale riding along with card hover */}
                             <motion.div
@@ -167,7 +167,7 @@ const Pricing_Section = () => {
                                             className="w-64 h-11 rounded-lg px-4 flex items-center justify-between bg-[#163300] text-white text-sm font-helvetica cursor-pointer"
                                         >
                                             {btn.label}
-                                            <Image src="/assets/icons/Arrow_Icon.svg" alt="" width={16} height={16} />
+                                            <Image src="/assets/Marketing/Pricing_Section/Arrow_Icon.svg" alt="" width={16} height={16} />
                                         </motion.button>
                                     ) : (
                                         <motion.button
@@ -181,7 +181,7 @@ const Pricing_Section = () => {
                                                 className={`${buttonFillClass[btn.variant]} flex items-center justify-between h-full rounded-[7px] px-4 text-white text-sm font-helvetica`}
                                             >
                                                 {btn.label}
-                                                <Image src="/assets/icons/Arrow_Icon.svg" alt="" width={16} height={16} />
+                                                <Image src="/assets/Marketing/Pricing_Section/Arrow_Icon.svg" alt="" width={16} height={16} />
                                             </span>
                                         </motion.button>
                                     )
@@ -204,7 +204,7 @@ const Pricing_Section = () => {
                                             variants={listItemVariants}
                                             className="flex items-center gap-2.5"
                                         >
-                                            <Image src="/assets/icons/Verify_Icon.svg" alt="" width={16} height={16} />
+                                            <Image src="/assets/Marketing/Pricing_Section/Verify_Icon.svg" alt="" width={16} height={16} />
                                             <span className="text-sm text-white">{feature}</span>
                                         </motion.li>
                                     ))}

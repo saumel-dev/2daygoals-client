@@ -80,14 +80,14 @@ const Hero = () => {
                 <div className="relative rounded-2xl sm:rounded-3xl bg-linear-to-b from-[#DEE9EE] to-[#F2F6F8] p-3 sm:p-5 md:p-7.5">
                     <div className="overflow-hidden rounded-xl sm:rounded-2xl bg-white shadow-sm">
                         <Image
-                            src="/assets/Toolbar.svg"
+                            src="/assets/Marketing/Hero/Toolbar.svg"
                             alt=""
                             width={1440}
                             height={48}
                             className="w-full h-auto"
                         />
                         <Image
-                            src="/assets/Homepage_Final.svg"
+                            src="/assets/Marketing/Hero/Homepage_Final.svg"
                             alt="2daygoals product preview"
                             width={1440}
                             height={820}

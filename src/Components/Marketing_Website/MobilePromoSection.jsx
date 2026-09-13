@@ -73,7 +73,7 @@ const MobilePromoSection = () => {
                     <motion.div variants={fadeUp} className="mt-6 flex items-center gap-4">
                         <Link href="#">
                             <Image
-                                src="/assets/MobilePromo/app_store.svg"
+                                src="/assets/Marketing/MobilePromo/app_store.svg"
                                 alt="Download on the App Store"
                                 width={135}
                                 height={40}
@@ -81,7 +81,7 @@ const MobilePromoSection = () => {
                         </Link>
                         <Link href="#">
                             <Image
-                                src="/assets/MobilePromo/google_play.svg"
+                                src="/assets/Marketing/MobilePromo/google_play.svg"
                                 alt="Get it on Google Play"
                                 width={135}
                                 height={40}
@@ -100,7 +100,7 @@ const MobilePromoSection = () => {
                     className="w-full max-w-sm md:max-w-md lg:max-w-lg shrink-0 flex justify-center"
                 >
                     <Image
-                        src="/assets/MobilePromo/smartphone_holding.svg"
+                        src="/assets/Marketing/MobilePromo/smartphone_holding.svg"
                         alt="Hand holding a smartphone showing the app"
                         width={520}
                         height={430}

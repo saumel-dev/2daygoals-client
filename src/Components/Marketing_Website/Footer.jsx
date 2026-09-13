@@ -69,7 +69,7 @@ const Footer = () => {
                     {/* Brand + newsletter */}
                     <div className="flex flex-col gap-4">
                         <Link href="/" className="flex items-center gap-2 no-underline hover:no-underline">
-                            <Image src="/assets/footer_logo.svg" alt="2daygoals" width={28} height={28} />
+                            <Image src="/assets/Footer/footer_logo.svg" alt="2daygoals" width={28} height={28} />
                             <span className="text-lg font-bolder text-white font-helvetica ">2daygoals</span>
                         </Link>
                         <p className="text-sm leading-relaxed text-white">

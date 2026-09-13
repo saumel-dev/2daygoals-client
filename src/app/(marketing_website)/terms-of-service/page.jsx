@@ -86,7 +86,7 @@ const TermsOfServicePage = () => {
                         className="relative w-full overflow-hidden rounded-2xl shadow-sm"
                     >
                         <Image
-                            src="/assets/privacy_policy.png"
+                            src="/assets/Privacy_Policy/privacy_policy.png"
                             alt="Privacy Policy Visual"
                             width={500}
                             height={350}
