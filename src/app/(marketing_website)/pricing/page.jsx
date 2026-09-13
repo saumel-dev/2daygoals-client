@@ -18,7 +18,7 @@ const Pricing_page = () => {
     return (
         <section className="mt-10 md:mt-20">
             <div className="container mx-auto px-5 mb-25">
-                <div className="inline-flex items-center rounded-md bg-[#DFFFCA] px-2.5 py-0.5">
+                <div className="inline-flex items-center rounded-md bg-[#9FE870] px-2.5 py-0.5">
                     <p className="text-[#163300] text-[14px] font-medium">Subscriptions</p>
                 </div>
                 <motion.h1
@@ -55,7 +55,7 @@ const Pricing_page = () => {
                                     <FaArrowRight className="h-4 w-4 text-black" />
                                 </motion.span>
                                 <span className="text-sm font-medium text-white pb-0.5">
-                                    Register - its Free
+                                    Register - Its Free
                                 </span>
                             </motion.span>
                         </Link>
