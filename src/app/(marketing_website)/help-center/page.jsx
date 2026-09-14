@@ -6,6 +6,8 @@ import { FaArrowRight } from 'react-icons/fa';
 import Link from 'next/link';
 import { blogs } from '@/lib/data/blogs';
 import BlogCard from '@/Components/Marketing_Website/BlogCard';
+import MobilePromoSection from '@/Components/Marketing_Website/MobilePromoSection';
+import CTASection from '@/Components/Marketing_Website/CTA';
 
 const fadeUp = {
     hidden: { opacity: 0, y: 24 },
@@ -236,6 +238,8 @@ const HelpCenter_page = () => {
                     </div>
                 </motion.div>
             </div>
+                <MobilePromoSection></MobilePromoSection>
+                <CTASection></CTASection>
         </section>
     );
 };
