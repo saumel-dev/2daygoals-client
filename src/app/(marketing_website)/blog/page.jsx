@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import { motion } from "motion/react";
 import { FaArrowRight } from 'react-icons/fa';
 import Link from 'next/link';
+import { blogs } from '@/lib/data/blogs';
+import FeaturedBlogCard from '@/Components/Marketing_Website/FeaturedBlogCard';
+import BlogCard from '@/Components/Marketing_Website/BlogCard';
 
 const fadeUp = {
     hidden: { opacity: 0, y: 24 },
@@ -77,14 +80,73 @@ const Blog_page = () => {
                             key={tab}
                             type="button"
                             onClick={() => setActiveFilter(tab)}
-                            className={`rounded-full px-5 py-2 text-sm font-medium transition ${
-                                activeFilter === tab
+                            className={`rounded-full px-5 py-2 text-sm font-medium transition ${activeFilter === tab
                                     ? 'bg-white text-[#111] shadow-sm'
                                     : 'bg-[#F1F1F1] text-[#111] hover:bg-[#e8e8e8]'
-                            }`}
+                                }`}
                         >
                             {tab}
                         </button>
+                    ))}
+                </motion.div>
+
+                {/* Popular Blogs */}
+                <motion.div
+                    initial="hidden"
+                    animate="show"
+                    variants={fadeUp}
+                    className="mt-16 md:mt-20"
+                >
+                    <h2 className="font-helvetica text-[50px] font-bolder leading-[1.1] text-[#111]">
+                        Popular Blogs
+                    </h2>
+                    <p className="text-[18px] font-normal text-[#313131] mt-3 max-w-142.5">
+                        Learn about the todaygoals.com products and features most loved by our customers
+                    </p>
+                </motion.div>
+
+                <motion.div
+                    initial="hidden"
+                    animate="show"
+                    variants={fadeUp}
+                    className="mt-8"
+                >
+                    <FeaturedBlogCard post={blogs[0]} />
+                </motion.div>
+
+                <motion.div
+                    initial="hidden"
+                    animate="show"
+                    variants={fadeUp}
+                    className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8"
+                >
+                    {blogs.slice(1, 4).map((post) => (
+                        <BlogCard key={post.slug} post={post} />
+                    ))}
+                </motion.div>
+                {/* Recent Blogs */}
+                <motion.div
+                    initial="hidden"
+                    animate="show"
+                    variants={fadeUp}
+                    className="mt-16 md:mt-20"
+                >
+                    <h2 className="font-helvetica text-[50px] font-bolder leading-[1.1] text-[#111]">
+                        Recent Blogs
+                    </h2>
+                    <p className="text-[18px] font-normal text-[#313131] mt-3 max-w-142.5">
+                        Learn about the todaygoals.com products and features most loved by our customers
+                    </p>
+                </motion.div>
+
+                <motion.div
+                    initial="hidden"
+                    animate="show"
+                    variants={fadeUp}
+                    className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8"
+                >
+                    {blogs.slice(0, 6).map((post) => (
+                        <BlogCard key={post.slug} post={post} />
                     ))}
                 </motion.div>
             </div>
